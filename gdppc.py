@@ -48,4 +48,4 @@ fig1.update_xaxes(showgrid=True, title_text=x_axis_title)
 
 st.plotly_chart(fig1, use_container_width=True)
 
-#test
+st.dataframe(for_plotting)
