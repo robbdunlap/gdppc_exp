@@ -23,7 +23,6 @@ countries_for_comparison.append(country_2_selected)
 countries_for_comparison.append(country_3_selected)
 
 subselect_of_gdp = gdp_df[gdp_df['country'].isin(countries_for_comparison)]
-del subselect_of_gdp['countrycode']
 countries_for_plotting = subselect_of_gdp.pivot(index='year',columns='country',values='gdppc')
 countries_for_plotting = countries_for_plotting.reset_index()
 
@@ -48,4 +47,6 @@ fig1.update_xaxes(showgrid=True, title_text=x_axis_title)
 
 st.plotly_chart(fig1, use_container_width=True)
 
+st.header('Tabular version of the above data')
+st.markdown('Sort the data by clicking on colunn headers')
 st.dataframe(for_plotting)
